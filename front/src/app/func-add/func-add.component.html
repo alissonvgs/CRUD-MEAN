@@ -1,0 +1,44 @@
+<div class="card col-md-6 col-md-offset-3">
+    <div class="card-body">
+        <form [formGroup]="adicionarFuncionarioForm">
+            <div class="col-md-6 col-md-offset-3">
+
+                <!-- Inicio do bloco: Nome do Funcionario-->
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text" class="form-control" formControlName="nomeFuncionario">
+                </div>
+                <div *ngIf="adicionarFuncionarioForm.controls['nomeFuncionario'].invalid
+                && (adicionarFuncionarioForm.controls['nomeFuncionario']).dirty
+                || adicionarFuncionarioForm.controls['nomeFuncionario'].touched)"
+                class=" alert alert-danger">
+                    <div *ngIf="adicionarFuncionarioForm.controls['nomeFuncionario'].errors.required">
+                        O campo "Nome" é obrigatório.
+                    </div>
+                </div>
+                <!-- Fim do bloco: Nome do Funcionario-->
+
+                <!-- Inicio do bloco: Cargo/Profissao-->
+                <div class="form-group">
+                    <label>Cargo/Profissão</label>
+                    <input type="text" class="form-control">
+                </div>
+                <!-- Fim do bloco: Cargo/Profissao-->
+
+                <!-- Inicio do bloco: Numero do identificador do funcionario -->
+                <div class="form-group">
+                    <label>Numéro do identificador</label>
+                    <input type="text" class="form-control">
+                </div>
+                <!-- Fim do bloco: Numero do identificador do funcionario-->
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">
+                        <fa name="plus" animation="spin"></fa>Funcionário
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
